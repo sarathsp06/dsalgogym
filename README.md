@@ -1,4 +1,4 @@
-# CRTCI
+# CTCI
 Cracking the coding interview - problems, solutions and discussions
 
 # Rules
