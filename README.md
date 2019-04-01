@@ -1,7 +1,11 @@
 # CTCI
 Cracking the coding interview - problems, solutions and discussions
 
-# Rules
+
+## TODO
+*.[X] Makefile to build index.md for problems
+
+## Rules
 * Directory structure would represent index in Cracking the coding interview edition 5. 
 * Every problem  will have its own README, solutions in different language
 * All discussions will happen in issues
