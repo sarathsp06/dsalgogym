@@ -1,4 +1,4 @@
-//Code to check for palindrom using iterative approach
+// Code toa check for palindrom using iterative approach
 // url : https://play.golang.org/p/unJ2YWYHeq
 package main
 
