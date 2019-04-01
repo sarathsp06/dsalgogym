@@ -2,7 +2,7 @@
 Cracking the coding interview - problems, solutions and discussions
 
 
-## TOD
+## TODO
 - [ ] Makefile to build index.md for problems
 - [ ] Update makefie with functions for test 
 
