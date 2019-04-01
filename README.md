@@ -2,8 +2,8 @@
 Cracking the coding interview - problems, solutions and discussions
 
 
-## TODO
-*.[X] Makefile to build index.md for problems
+## TOD
+- [ ] Makefile to build index.md for problems
 
 ## Rules
 * Directory structure would represent index in Cracking the coding interview edition 5. 
