@@ -4,6 +4,7 @@ Cracking the coding interview - problems, solutions and discussions
 
 ## TOD
 - [ ] Makefile to build index.md for problems
+- [ ] Update makefie with functions for test 
 
 ## Rules
 * Directory structure would represent index in Cracking the coding interview edition 5. 
