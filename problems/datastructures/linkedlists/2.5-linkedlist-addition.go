@@ -1,18 +1,18 @@
 // Program to add two linked lists where : 216 = 2->1->6,12 = 1->2
 // link : https://play.golang.org/p/EFmTmAtzxu
-package main
+package linkedlists
 
 import (
 	"fmt"
 )
 
-type Node struct {
-	Next  *Node
+type Digit struct {
+	Next  *Digit
 	Digit int
 }
 
 type List struct {
-	Head *Node
+	Head *Digit
 }
 
 func (l List) Len() int {
@@ -38,12 +38,12 @@ func (l List) String() string {
 func (l *List) Add(v *List) {
 	carry := l.Head.Add(v.Head)
 	if carry != 0 {
-		node := &Node{Digit: carry, Next: l.Head}
+		node := &Digit{Digit: carry, Next: l.Head}
 		l.Head = node
 	}
 }
 
-func (n *Node) Add(v *Node) int {
+func (n *Digit) Add(v *Digit) int {
 	if n == nil {
 		return 0
 	}
@@ -69,7 +69,7 @@ func AdjustLength(a, b *List) {
 
 func addPadding(l *List, len int) {
 	for i := 0; i < len; i++ {
-		node := new(Node)
+		node := new(Digit)
 		node.Next = l.Head
 		l.Head = node
 	}
@@ -77,14 +77,14 @@ func addPadding(l *List, len int) {
 
 func main() {
 	L1 := new(List)
-	L1.Head = &Node{Digit: 8}
-	L1.Head.Next = &Node{Digit: 7}
-	L1.Head.Next.Next = &Node{Digit: 8}
+	L1.Head = &Digit{Digit: 8}
+	L1.Head.Next = &Digit{Digit: 7}
+	L1.Head.Next.Next = &Digit{Digit: 8}
 	L2 := new(List)
-	L2.Head = &Node{Digit: 8}
-	L2.Head.Next = &Node{Digit: 2}
-	L2.Head.Next.Next = &Node{Digit: 5}
-	L2.Head.Next.Next.Next = &Node{Digit: 3}
+	L2.Head = &Digit{Digit: 8}
+	L2.Head.Next = &Digit{Digit: 2}
+	L2.Head.Next.Next = &Digit{Digit: 5}
+	L2.Head.Next.Next.Next = &Digit{Digit: 3}
 
 	//Before adjesting length
 	fmt.Println("Before adjesting length")
