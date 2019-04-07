@@ -1,104 +1,53 @@
-// Code toa check for palindrom using iterative approach
+// Package linkedlists contains problems from cracking the coding interview from linkedlists chapter
+// Code to check for palindrom using iterative approach
 // url : https://play.golang.org/p/unJ2YWYHeq
-package main
-
-import (
-	"fmt"
-)
+package linkedlists
 
 type String struct {
-	Head *Node
+	Head *Char
 }
 
-func (s String) String() string {
-	if s.Head == nil {
-		return ""
-	}
-	tmp := s.Head
-	var str []rune
-	for tmp != nil {
-		str = append(str, tmp.Value)
-		tmp = tmp.Next
-	}
-	return string(str)
+func (s *String) Push(r rune) {
+	n := &Char{Value: r, Next: s.Head}
+	s.Head = n
 }
 
-func NewString(s string) String {
-	if len(s) == 0 {
-		return String{}
-	}
-	sRunes := []rune(s)
-	str := String{}
-	str.Head = &Node{Value: sRunes[0]}
-	tmp := str.Head
-	for _, r := range sRunes[1:] {
-		tmp.Next = &Node{Value: r}
-		tmp = tmp.Next
-	}
-	return str
+// assumption string is not empty
+func (s *String) Pop() rune {
+	val := s.Head.Value
+	s.Head = s.Head.Next
+	return val
 }
 
-type Stack struct {
-	Head *Node
-}
-
-func (s *Stack) Push(n Node) {
-	n.Next = s.Head
-	s.Head = &n
-}
-
-type Node struct {
-	Next  *Node
+type Char struct {
+	Next  *Char
 	Value rune
 }
 
-func IterativePalindrom(a String) bool {
-	s := &Stack{}
-	p1 := a.Head
-	if a.Head == nil {
-		return true
-	}
-	s.Push(*p1)
-	p2 := a.Head.Next
-	if p2 == nil {
+func IterativePalindrom(str string) bool {
+	s := new(String)
+	strLen := len(str)
+	if strLen == 0 {
 		return true
 	}
 
-	for p2.Next != nil && p2.Next.Next != nil {
-		p2 = p2.Next.Next
-		p1 = p1.Next
-		s.Push(*p1)
+	if strLen == 1 {
+		return true
 	}
 
-	if p2.Next == nil {
-		p1 = p1.Next
-	} else {
-		p1 = p1.Next.Next
+	mid := int(strLen / 2)
+
+	for _, char := range []rune(str[:mid]) {
+		s.Push(char)
 	}
-	p2 = s.Head
-	for p2 != nil {
-		if p2.Value != p1.Value {
+	if strLen%2 == 1 {
+		mid++
+	}
+	for _, char := range str[mid:] {
+		r := s.Pop()
+		if char != r {
 			return false
 		}
-		p2 = p2.Next
-		p1 = p1.Next
 	}
 	return true
-}
-
-func main() {
-	malayalam := NewString("MalayalaM")
-	paap := NewString("PAAP")
-	paapo := NewString("PAAPo")
-	p := NewString("P")
-	pa := NewString("PA")
-	empty := NewString("")
-
-	fmt.Println("malayalam", IterativePalindrom(malayalam))
-	fmt.Println("paap", IterativePalindrom(paap))
-	fmt.Println("paapo", IterativePalindrom(paapo))
-	fmt.Println("p", IterativePalindrom(p))
-	fmt.Println("pa", IterativePalindrom(pa))
-	fmt.Println("", IterativePalindrom(empty))
-
 }
