@@ -31,6 +31,11 @@ func TestURLify(t *testing.T) {
 			args: args{s: "  "},
 			want: `%20%20`,
 		},
+		{
+			name: "one letter between spaces",
+			args: args{s: " a "},
+			want: `%20a%20`,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
