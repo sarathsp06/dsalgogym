@@ -1,4 +1,4 @@
-# CTCI
+# CTCI [![Build Status](https://travis-ci.com/sarathsp06/ctci.svg?branch=master)](https://travis-ci.com/sarathsp06/ctci)
 Cracking the coding interview - problems, solutions and discussions
 
 
