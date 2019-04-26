@@ -1,4 +1,5 @@
-# CTCI [![Build Status](https://travis-ci.com/sarathsp06/ctci.svg?branch=master)](https://travis-ci.com/sarathsp06/ctci)
+# CTCI [![Build Status](https://travis-ci.com/sarathsp06/ctci.svg?branch=master)](https://travis-ci.com/sarathsp06/ctci) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
+
 Cracking the coding interview - problems, solutions and discussions
 
 
