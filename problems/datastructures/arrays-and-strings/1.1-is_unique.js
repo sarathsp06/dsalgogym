@@ -13,6 +13,3 @@ function isEveryCharacterUnique (string) {
 }
 
 exports.isEveryCharacterUniquefunction = isEveryCharacterUnique
-// console.log(isEveryCharacterUnique('avonte'))
-// console.log(isEveryCharacterUnique('Droid'))
-// console.log(isEveryCharacterUnique('apple'))
