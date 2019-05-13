@@ -2,6 +2,20 @@ package prime
 
 import "testing"
 
+var dummy interface{}
+
+func benchmarkGetMaxPrimeFact(val int64, b *testing.B) {
+	var t int64
+	for n := 0; n < b.N; n++ {
+		t = GetMaxPrimeFact(val)
+	}
+	dummy = t
+}
+
+func BenchmarkGetPrimeFact600851475143(b *testing.B) { benchmarkGetMaxPrimeFact(600851475143, b) }
+func BenchmarkGetPrimeFact13(b *testing.B)           { benchmarkGetMaxPrimeFact(13, b) }
+func BenchmarkGetPrimeFact3326427(b *testing.B)      { benchmarkGetMaxPrimeFact(3326427, b) }
+
 func TestGetMaxPrimeFact(t *testing.T) {
 	type args struct {
 		n int64
