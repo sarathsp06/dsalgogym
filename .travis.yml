@@ -7,9 +7,10 @@ go:
 
 before_install:
   - go get -t -v ./...
+  - make npm-install
 
 script:
-  - go test -race -coverprofile=coverage.txt -covermode=atomic ./...
+  - make test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
