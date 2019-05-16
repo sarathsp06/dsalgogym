@@ -4,7 +4,8 @@
   "description": "Solving algorithms problems from CTCI book and some other sources",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "cover-js": "nyc report --reporte=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
