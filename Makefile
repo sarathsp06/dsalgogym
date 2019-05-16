@@ -7,6 +7,3 @@ test:
 
 npm-install:
 		@npm install
-
-npm-coverage:
-		@npm run cover-js
