@@ -27,7 +27,6 @@
   "homepage": "https://github.com/sarathsp06/ctci#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "codecov": "^3.5.0",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1"
   }

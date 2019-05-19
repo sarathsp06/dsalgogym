@@ -13,6 +13,5 @@ script:
   - make test
   
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -cF go
-  - npm test
-  - bash <(curl -s https://codecov.io/bash) -cF javascript
+  - bash <(curl -s https://codecov.io/bash) -F go -f "coverage.txt"
+  - bash <(curl -s https://codecov.io/bash) -F javascript -f "coverage.lcov"
