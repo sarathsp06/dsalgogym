@@ -13,4 +13,6 @@ script:
   - make test
   
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -cF go
+  - npm test
+  - bash <(curl -s https://codecov.io/bash) -cF javascript

@@ -28,3 +28,4 @@ _testmain.go
 *.lcov
 package-lock.json
 coverage.txt
+coverage/
