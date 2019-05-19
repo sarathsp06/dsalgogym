@@ -1,9 +1,16 @@
-test:
-	go	test	-race	-coverprofile=coverage.txt	-covermode=atomic	./...	\
+NODE_ENV=test
+GO=go
+GOTEST=$(GO) test
+NPM=npm
 
-	@NODE_ENV=test	./node_modules/.bin/mocha	\
+test: npm-install .nyc_output
+	$(GOTEST) -race -coverprofile=coverage.txt -covermode=atomic ./...
+	$(NPM) test > coverage.lcov
 
-.PHONY:	test
+.nyc_output:
+	mkdir -p .nyc_output
 
 npm-install:
-		@npm install
+	$(NPM) install
+
+.PHONY:	test npm-install
