@@ -1,10 +1,6 @@
-// Program to add two linked lists where : 216 = 2->1->6,12 = 1->2
+// Package linkedlists has function to add two linked lists where : 216 = 2->1->6,12 = 1->2
 // link : https://play.golang.org/p/EFmTmAtzxu
 package linkedlists
-
-import (
-	"fmt"
-)
 
 type Digit struct {
 	Next  *Digit
@@ -25,6 +21,7 @@ func (l List) Len() int {
 	return len
 }
 
+// String implements the stringify interface
 func (l List) String() string {
 	var result []byte
 	node := l.Head
@@ -32,74 +29,32 @@ func (l List) String() string {
 		result = append(result, byte(node.Digit)+'0')
 		node = node.Next
 	}
+	lastIndex := len(result) - 1
+	for i := 0; i <= lastIndex/2; i++ {
+		result[i], result[lastIndex-i] = result[lastIndex-i], result[i]
+	}
 	return string(result)
 }
 
+// Add wrap digits add function
 func (l *List) Add(v *List) {
-	carry := l.Head.Add(v.Head)
-	if carry != 0 {
-		node := &Digit{Digit: carry, Next: l.Head}
-		l.Head = node
-	}
+	l.Head = l.Head.Add(v.Head)
 }
 
-func (n *Digit) Add(v *Digit) int {
+// Add adds two numbers recursively
+func (n *Digit) Add(v *Digit) *Digit {
 	if n == nil {
-		return 0
+		return v
 	}
-	carry := n.Next.Add(v.Next)
-	n.Digit = n.Digit + v.Digit + carry
-	carry = n.Digit / 10
+	if v == nil {
+		return n
+	}
+	n.Digit = n.Digit + v.Digit
+	carry := n.Digit / 10
 	n.Digit = n.Digit % 10
-	return carry
-}
-
-func AdjustLength(a, b *List) {
-	lenA := a.Len()
-	lenB := b.Len()
-	if lenA == lenB {
-		return
+	n.Next = n.Next.Add(v.Next)
+	if n.Next != nil {
+		n.Next.Digit += carry
 	}
-	if lenA > lenB {
-		addPadding(b, lenA-lenB)
-		return
-	}
-	addPadding(a, lenB-lenA)
-}
-
-func addPadding(l *List, len int) {
-	for i := 0; i < len; i++ {
-		node := new(Digit)
-		node.Next = l.Head
-		l.Head = node
-	}
-}
-
-func main() {
-	L1 := new(List)
-	L1.Head = &Digit{Digit: 8}
-	L1.Head.Next = &Digit{Digit: 7}
-	L1.Head.Next.Next = &Digit{Digit: 8}
-	L2 := new(List)
-	L2.Head = &Digit{Digit: 8}
-	L2.Head.Next = &Digit{Digit: 2}
-	L2.Head.Next.Next = &Digit{Digit: 5}
-	L2.Head.Next.Next.Next = &Digit{Digit: 3}
-
-	//Before adjesting length
-	fmt.Println("Before adjesting length")
-	fmt.Println(L1)
-	fmt.Println(L2)
-	AdjustLength(L1, L2)
-
-	//After adjesting length
-	fmt.Println("After adjesting length")
-	fmt.Println(L1)
-	fmt.Println(L2)
-
-	//Sum
-	L1.Add(L2)
-	fmt.Println("A + B")
-	fmt.Println(L1)
-
+	return n
 }
