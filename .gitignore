@@ -26,3 +26,5 @@ _testmain.go
 *.test
 *.prof
 *.lcov
+package-lock.json
+coverage.txt

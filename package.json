@@ -4,15 +4,23 @@
   "description": "Solving algorithms problems from CTCI book and some other sources",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha",
-    "cover-js": "nyc report --reporte=text-lcov > coverage.lcov && codecov"
+    "test": "nyc --reporter=text-lcov mocha"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sarathsp06/ctci.git"
   },
-  "author": "Sarath and Abhishek",
-  "license": "ISC",
+  "author": {
+    "name": "Abhishek"
+  },
+  "contributors": [
+    {
+      "name": "Sarath S Pillai",
+      "email": "sarathsp06@gmail.com",
+      "url": "https://sarathsp.com"
+    }
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sarathsp06/ctci/issues"
   },
