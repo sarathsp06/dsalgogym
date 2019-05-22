@@ -94,3 +94,31 @@ func TestList_CheckIntersection(t *testing.T) {
 		})
 	}
 }
+
+func TestList_Add(t *testing.T) {
+
+	type args struct {
+		node *Node
+	}
+	tests := []struct {
+		name string
+		list *List
+		args args
+		want *List
+	}{
+		{
+			name: "1->2->3 + 4->5->6",
+			list: ListFromString("1->2->3"),
+			args: args{node: ListFromString("4->5->6").head},
+			want: ListFromString("1->2->3->4->5->6"),
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			if got := tt.list.Add(tt.args.node); tt.want.String() != got.String() {
+				t.Errorf("List.Add() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

@@ -52,16 +52,28 @@ func ListFromString(list string) *List {
 	}
 	items := strings.Split(list, linkStr)
 	l := &List{}
-	l.head = &Node{val: items[0]}
-	l.tail = l.head
-	for _, item := range items[1:] {
-		l.tail.next = &Node{val: item}
-		l.tail = l.tail.next
+	for _, item := range items {
+		l.Add(&Node{val: item})
 	}
 	l.len = len(items)
 	return l
 }
 
+// Add ads nodes
+// if the node is already a part of linked list
+// it advaces the tail to end of that nodes last item
+func (l *List) Add(node *Node) *List {
+	if l.head == nil {
+		l.head, l.tail = node, node
+	} else {
+		l.tail.next = node
+		l.tail = node
+	}
+	for l.tail.next != nil {
+		l.tail = l.tail.next
+	}
+	return l
+}
 func (l *List) String() string {
 	var vals []string
 	m := l.head
