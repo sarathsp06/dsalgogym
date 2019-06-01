@@ -1,11 +1,11 @@
 const fs = require('fs');
 
-const INDENT_CHAR = "\t"
+const INDENT_CHAR = "\t";
 
-var indexString = "# Index\n\n"
+var indexString = "# Index\n\n";
 
 const getIndent = (n) => {
-	indent = ""
+	indent = "";
 	for (var i=0;i<n;i++){
 		indent += INDENT_CHAR;
 	}
