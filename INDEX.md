@@ -1,0 +1,18 @@
+# Index
+
+- [datastructures](problems/datastructures)
+	- [arrays-and-strings](problems/datastructures/arrays-and-strings)
+	- [linkedlists](problems/datastructures/linkedlists)
+- [other](problems/other)
+	- [brackets](problems/other/brackets)
+	- [idleserver](problems/other/idleserver)
+	- [jumpsteps](problems/other/jumpsteps)
+	- [largersmaller](problems/other/largersmaller)
+	- [largestprimefactor](problems/other/largestprimefactor)
+	- [largestsubstring](problems/other/largestsubstring)
+	- [lastn](problems/other/lastn)
+	- [listintersection](problems/other/listintersection)
+	- [romannumber](problems/other/romannumber)
+	- [splitip](problems/other/splitip)
+	- [triplet](problems/other/triplet)
+	- [watercapacity](problems/other/watercapacity)
