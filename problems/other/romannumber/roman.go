@@ -41,4 +41,3 @@ func main() {
 		fmt.Printf("Test(%v) %s: %d\n", parseRoman(roman) == expectedValue, roman, expectedValue)
 	}
 }
-
