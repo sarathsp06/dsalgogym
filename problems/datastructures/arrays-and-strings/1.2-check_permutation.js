@@ -3,25 +3,25 @@
  */
 
  function isPermutation (s1, s2) {
-     if (s1.length !== s2.length) return false
-     if (s1 === s2) return true
-     var checker = {}
+     if (s1.length !== s2.length) return false;
+     if (s1 === s2) return true;
+     var checker = {};
      for (var element of s1) {
          if (checker[element]) {
-             checker[element] += 1
-             continue
+             checker[element] += 1;
+             continue;
          }
-         checker[element] = 1
+         checker[element] = 1;
      };
 
      for (var element of s2){
          if (checker[element]) {
-             checker[element] -= 1
-             continue
+             checker[element] -= 1;
+             continue;
          }
-         return false
+         return false;
      }
-     return true
+     return true;
  }
 
-exports.isPermutation = isPermutation
+exports.isPermutation = isPermutation;
