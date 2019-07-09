@@ -6,7 +6,7 @@ describe('Testing 1.2-check_permutation', _ => {
         assert.isFalse(isPermutation('a', ''));
     });
 
-    it ('Input "a" and "a" must return true', function (){
+    it ('Input "a" and "a" must return true', function () {
         assert.isTrue(isPermutation('a', 'a'));
     });
 
@@ -14,7 +14,11 @@ describe('Testing 1.2-check_permutation', _ => {
         assert.isFalse(isPermutation('aabbbc', 'abc'));
     });
 
-    it ('Input "abc" and "bca" must return true', function (){
+    it ('Input "abc" and "aabbbc" must return false', function () {
+        assert.isFalse(isPermutation('abc', 'aabbbc'));
+    });
+
+    it ('Input "abc" and "bca" must return true', function () {
         assert.isTrue(isPermutation('abc', 'bca'));
     });
 });
