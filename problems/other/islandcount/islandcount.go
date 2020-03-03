@@ -2,8 +2,8 @@ package islandcount
 
 func numIslands(grid [][]int) int {
 	countIsland := 0
-	for i, _ := range grid {
-		for j, _ := range grid[i] {
+	for i := range grid {
+		for j := range grid[i] {
 			if int(grid[i][j]) == 1 {
 				countIsland++
 				destroyIsland(grid, i, j)
