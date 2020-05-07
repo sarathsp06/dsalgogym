@@ -36,7 +36,7 @@ func ExampleUniqueNoExtra() {
 	//false
 }
 
-func TestIsUnique2(t *testing.T) {
+func TestIsUnique(t *testing.T) {
 	testCases := []struct {
 		input  string
 		output bool

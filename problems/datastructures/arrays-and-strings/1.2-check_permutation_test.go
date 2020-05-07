@@ -1,6 +1,11 @@
 package arrays
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_isPermutation(t *testing.T) {
 	type args struct {
@@ -49,5 +54,36 @@ func Test_isPermutation(t *testing.T) {
 				t.Errorf("isPermutation() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func TestIsPermutation(t *testing.T) {
+	testCases := []struct {
+		input1 string
+		input2 string
+		output bool
+	}{
+		{"", "", true},
+		{"a", "a", true},
+		{"abcA", "aAbc", true},
+		{"heo", "oeh", true},
+		{"hello", "fello", false},
+		{"aba", "aba", true},
+		{"aba", "aca", false},
+		{"aaaaaaaaa", "aaa", false},
+		{"blu bla", "ull abb", true},
+		{"Lorem ipsum dolor sit amet.", "blah", false},
+		// The above tests could be structured better by recognizing that
+		// there are only 3 possible class of inputs
+		// 1. Same length strings [permutation, not permutation]
+		// 2. Different length strings
+	}
+	testFuncs := []func(string, string) bool{isPermutationSort, isPermutationMap}
+	for _, fn := range testFuncs {
+		for _, tc := range testCases {
+			t.Run(fmt.Sprintf("Test %s & %s", tc.input1, tc.input2), func(t *testing.T) {
+				assert.Equal(t, tc.output, fn(tc.input1, tc.input2))
+			})
+		}
 	}
 }
