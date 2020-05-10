@@ -24,6 +24,7 @@ func URLify(str string) string {
 	return string(s)
 }
 
+// URLifyBuiltin has time complexity O(n)...?
 func URLifyBuiltin(input string) string {
 	// Does it make sense to implement a solution conforming to constraints
 	// that are not imposed by the current language you use?
