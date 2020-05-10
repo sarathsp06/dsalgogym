@@ -1,9 +1,7 @@
 language: go
 
 go:
-  - 1.11
-  - 1.12
-  - tip
+  - stable
 
 before_install:
   - go get -t -v ./...
