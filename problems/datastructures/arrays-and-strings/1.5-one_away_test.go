@@ -21,6 +21,7 @@ func TestIsOneAway(t *testing.T) {
 		{"Equal Size", "dbac", "dbgc", true},
 		{"Equal Size", "dbac", "dbgx", false},
 		{"Size Diff = 1", "a", "ab", true},
+		{"Size Diff = 1", "b", "ab", true},
 		{"Size Diff = 1", "cab", "ab", true},
 		{"Size Diff = 1", "xyb", "ab", false},
 		{"Size Diff = 1", "cab", "cd", false},
