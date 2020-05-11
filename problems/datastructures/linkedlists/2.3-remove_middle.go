@@ -1,5 +1,6 @@
 package linkedlists
 
+// O(1)
 func removeMiddle(input []int, target int) string {
 	var ll LinkedList
 	ll.Init(input)
