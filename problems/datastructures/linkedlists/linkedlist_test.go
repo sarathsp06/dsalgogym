@@ -26,8 +26,7 @@ func TestInit(t *testing.T) {
 	}
 	for _, tc := range testcases {
 		t.Run(tc.name, func(t *testing.T) {
-			var ll LinkedList
-			ll.Init(tc.input)
+			ll := InitLinkedList(tc.input)
 			assert.Equal(t, tc.output, ll.String())
 		})
 	}
@@ -49,8 +48,7 @@ func TestAdd(t *testing.T) {
 	}
 	for _, tc := range testcases {
 		t.Run(tc.name, func(t *testing.T) {
-			var ll LinkedList
-			ll.Init(tc.input)
+			ll := InitLinkedList(tc.input)
 			ll.Add(tc.elem)
 			assert.Equal(t, tc.output, ll.String())
 		})

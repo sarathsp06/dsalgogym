@@ -5,8 +5,7 @@ package linkedlists
 // touch N elements. Notice that the same loop variable is being manipulated by
 // both the loops.
 func removeDups(input []int) string {
-	var ll LinkedList
-	ll.Init(input)
+	ll := InitLinkedList(input)
 	seen := make(map[int]bool)
 	for i := ll.Head; i != nil; i = i.Next {
 		seen[i.Value] = true
@@ -22,8 +21,7 @@ func removeDups(input []int) string {
 // elements in the worst case. Notice that the same loop variable is being
 // manipulated by both the inner loops.
 func removeDupsNoBuffer(input []int) string {
-	var ll LinkedList
-	ll.Init(input)
+	ll := InitLinkedList(input)
 	for i := ll.Head; i != nil; i = i.Next {
 		for j := i; j != nil; j = j.Next {
 			for j.Next != nil && j.Next.Value == i.Value {

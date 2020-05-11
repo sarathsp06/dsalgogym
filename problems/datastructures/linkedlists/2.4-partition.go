@@ -2,8 +2,7 @@ package linkedlists
 
 // O(N)
 func partition(input []int, target int) string {
-	var ll LinkedList
-	ll.Init(input)
+	ll := InitLinkedList(input)
 	var targetLoc []*Node
 	for ptr := ll.Head; ptr != nil; ptr = ptr.Next {
 		if ptr.Value == target {

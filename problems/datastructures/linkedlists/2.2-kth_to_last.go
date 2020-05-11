@@ -2,8 +2,7 @@ package linkedlists
 
 // O(n)
 func kthToLast(k int, input []int) int {
-	var ll LinkedList
-	ll.Init(input)
+	ll := InitLinkedList(input)
 	if k >= ll.Len || k < 0 {
 		return -1
 	}
