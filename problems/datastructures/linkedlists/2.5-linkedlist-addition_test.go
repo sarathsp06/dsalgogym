@@ -115,3 +115,51 @@ func TestListAdd(t *testing.T) {
 		})
 	}
 }
+
+func TestSumListForward(t *testing.T) {
+	testcases := []struct {
+		name   string
+		input1 []int
+		input2 []int
+		output string
+	}{
+		{"Same Length", []int{3, 2, 1}, []int{6, 5, 4}, "9-7-5"},                                // 321 + 654
+		{"Same Length", []int{2}, []int{1}, "3"},                                                // 2 + 1
+		{"Same Length", []int{6, 1, 7}, []int{2, 9, 5}, "9-1-2"},                                // 617 + 295
+		{"Different Length", []int{1, 2}, []int{1}, "1-3"},                                      // 12 + 1
+		{"Different Length", []int{2}, []int{2, 1}, "2-3"},                                      // 2 + 21
+		{"Different Length", []int{6, 5, 4, 3, 2}, []int{7, 6, 5, 4, 3, 2, 1}, "7-7-1-9-7-5-3"}, // 7654321 + 65432
+	}
+	testFuncs := []func([]int, []int) string{sumListForward}
+	for _, fn := range testFuncs {
+		for _, tc := range testcases {
+			t.Run(tc.name, func(t *testing.T) {
+				assert.Equal(t, tc.output, fn(tc.input1, tc.input2))
+			})
+		}
+	}
+}
+
+func TestSumListBackward(t *testing.T) {
+	testcases := []struct {
+		name   string
+		input1 []int
+		input2 []int
+		output string
+	}{
+		{"Same Length", []int{1, 2, 3}, []int{4, 5, 6}, "5-7-9"},                                // 321 + 654
+		{"Same Length", []int{2}, []int{1}, "3"},                                                // 2 + 1
+		{"Same Length", []int{7, 1, 6}, []int{5, 9, 2}, "2-1-9"},                                // 617 + 295
+		{"Different Length", []int{2, 1}, []int{1}, "3-1"},                                      // 12 + 1
+		{"Different Length", []int{2}, []int{1, 2}, "3-2"},                                      // 2 + 21
+		{"Different Length", []int{2, 3, 4, 5, 6}, []int{1, 2, 3, 4, 5, 6, 7}, "3-5-7-9-1-7-7"}, // 7654321 + 65432
+	}
+	testFuncs := []func([]int, []int) string{sumListBackward}
+	for _, fn := range testFuncs {
+		for _, tc := range testcases {
+			t.Run(tc.name, func(t *testing.T) {
+				assert.Equal(t, tc.output, fn(tc.input1, tc.input2))
+			})
+		}
+	}
+}

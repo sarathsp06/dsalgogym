@@ -2,6 +2,8 @@
 // link : https://play.golang.org/p/EFmTmAtzxu
 package linkedlists
 
+import "strconv"
+
 type Digit struct {
 	Next  *Digit
 	Digit int
@@ -57,4 +59,47 @@ func (n *Digit) Add(v *Digit) *Digit {
 		n.Next.Digit += carry
 	}
 	return n
+}
+
+// O(N)
+func sumListBackward(lst1 []int, lst2 []int) string {
+	p1 := InitLinkedList(lst1).Head
+	p2 := InitLinkedList(lst2).Head
+	var result LinkedList
+	carry := 0
+	for ; p1 != nil && p2 != nil; p1, p2 = p1.Next, p2.Next {
+		positionalSum := (p1.Value + p2.Value + carry) % 10
+		carry = (p1.Value + p2.Value + carry) / 10
+		result.Add(positionalSum)
+	}
+	ptr := p1
+	if ptr == nil {
+		ptr = p2
+	}
+	for ; ptr != nil; ptr = ptr.Next {
+		positionalSum := (ptr.Value + carry) % 10
+		carry = (ptr.Value + carry) / 10
+		result.Add(positionalSum)
+	}
+	return result.String()
+}
+
+// O(N)
+func sumListForward(lst1 []int, lst2 []int) string {
+	p1 := InitLinkedList(lst1).Head
+	p2 := InitLinkedList(lst2).Head
+	sum := 0
+	for _, ptr := range []*Node{p1, p2} {
+		num := 0
+		for p := ptr; p != nil; p = p.Next {
+			num = num*10 + p.Value
+		}
+		sum = sum + num
+	}
+	var result LinkedList
+	for _, e := range strconv.Itoa(sum) {
+		digit, _ := strconv.Atoi(string(e))
+		result.Add(digit)
+	}
+	return result.String()
 }
