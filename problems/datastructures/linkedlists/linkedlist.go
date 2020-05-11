@@ -18,11 +18,12 @@ type LinkedList struct {
 	Len  int
 }
 
-// Init initalizes the linkedlist with the given list of integers
-func (l *LinkedList) Init(input []int) {
+// Init initalizes and returns a linkedlist with the given list of integers
+func InitLinkedList(input []int) (ll LinkedList) {
 	for _, val := range input {
-		l.Add(val)
+		ll.Add(val)
 	}
+	return
 }
 
 // Add adds a single element to the linkedlist

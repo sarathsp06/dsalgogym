@@ -38,8 +38,7 @@ func TestPartition(t *testing.T) {
 					}
 				}
 				// Check that all the elements are still present
-				var ll LinkedList
-				ll.Init(tc.input)
+				ll := InitLinkedList(tc.input)
 				inputEle := strings.Split(ll.String(), "-")
 				sort.Strings(inputEle)
 				sort.Strings(outputEle)
