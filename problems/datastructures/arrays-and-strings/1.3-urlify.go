@@ -1,5 +1,7 @@
 package arrays
 
+import "strings"
+
 func URLify(str string) string {
 	space := []byte(`%20`)
 	s := []byte(str)
@@ -20,4 +22,13 @@ func URLify(str string) string {
 		copy(s[j:j+4], space)
 	}
 	return string(s)
+}
+
+// URLifyBuiltin has time complexity O(n)...?
+func URLifyBuiltin(input string) string {
+	// Does it make sense to implement a solution conforming to constraints
+	// that are not imposed by the current language you use?
+	// Should I artifically limit the slice and resort to manual rune shifting
+	// just to solve the problem in its intended form? ¯\_(ツ)_/¯
+	return strings.ReplaceAll(input, " ", "%20")
 }
