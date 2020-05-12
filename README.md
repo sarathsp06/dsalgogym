@@ -1,4 +1,4 @@
-# CTCI [![Build Status](https://travis-ci.com/sarathsp06/ctci.svg?branch=master)](https://travis-ci.com/sarathsp06/ctci) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![codecov](https://codecov.io/gh/sarathsp06/ctci/branch/master/graph/badge.svg)](https://codecov.io/gh/sarathsp06/ctci)
+# CTCI [![Build Status](https://travis-ci.com/sarathsp06/ctci.svg?branch=master)](https://travis-ci.com/sarathsp06/ctci) [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![codecov](https://codecov.io/gh/sarathsp06/ctci/branch/master/graph/badge.svg)](https://codecov.io/gh/sarathsp06/ctci) [![Total alerts](https://img.shields.io/lgtm/alerts/g/sarathsp06/ctci.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sarathsp06/ctci/alerts/)
 
 Cracking the coding interview - problems, solutions and discussions
 
