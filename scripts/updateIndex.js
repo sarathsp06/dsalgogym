@@ -25,7 +25,7 @@ const walk = (dir, level = 0) => {
 };
 
 const build = () => {
-	walk("./problems");
+	walk("./ctci");
 	fs.writeFile("./INDEX.md", indexString, (err) => {
 		if (err) {
 			console.log("couldn't write to INDEX.md. err:", err);

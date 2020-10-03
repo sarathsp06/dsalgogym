@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarathsp06/ctci.git"
+    "url": "git+https://github.com/sarathsp06/dsalgogym.git"
   },
   "author": {
     "name": "Abhishek"
@@ -23,9 +23,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sarathsp06/ctci/issues"
+    "url": "https://github.com/sarathsp06/dsalgogym/issues"
   },
-  "homepage": "https://github.com/sarathsp06/ctci#readme",
+  "homepage": "https://github.com/sarathsp06/dsalgogym#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.1.4",

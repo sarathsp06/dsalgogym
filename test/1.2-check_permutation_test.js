@@ -1,1 +1,1 @@
-../problems/datastructures/arrays-and-strings/1.2-check_permutation_test.js
+../ctci/datastructures/arrays-and-strings/1.2-check_permutation_test.js
