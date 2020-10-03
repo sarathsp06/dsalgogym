@@ -4,7 +4,7 @@ Cracking the coding interview - problems, solutions and discussions
 
 
 ## TODO
-- [ ] Makefile to build index.md for problems
+- [X] Makefile to build [index.md](./INDEX.md) for problems
 - [ ] Update makefie with functions for test 
 
 ## Rules
