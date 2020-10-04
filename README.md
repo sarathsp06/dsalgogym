@@ -11,3 +11,28 @@ Question and answers to mutiple datastructure algorithm problems
 * Every problem  will have its own README, solutions in different language
 * All discussions will happen in issues
 * Pull request should have an issue to back it
+
+## Table of contents
+ - [ctci](ctci)
+  - [datastructures](ctci/datastructures)
+ - [ctci](misc)
+  - [datastructures](misc/datastructures)
+  - [splitip](misc/splitip)
+  - [longestsubstring](misc/longestsubstring)
+  - [firstduplicate](misc/firstduplicate)
+  - [romannumber](misc/romannumber)
+  - [jumpsteps](misc/jumpsteps)
+  - [largersmaller](misc/largersmaller)
+  - [idleserver](misc/idleserver)
+  - [mostrepeating](misc/mostrepeating)
+  - [listintersection](misc/listintersection)
+  - [brackets](misc/brackets)
+  - [largestsubstring](misc/largestsubstring)
+  - [triplet](misc/triplet)
+  - [README.md](misc/README.md)
+  - [largestprimefactor](misc/largestprimefactor)
+  - [mxsteps](misc/mxsteps)
+  - [watercapacity](misc/watercapacity)
+  - [islandcount](misc/islandcount)
+  - [lastn](misc/lastn)
+
